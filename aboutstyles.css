@@ -1,0 +1,386 @@
+/* --- aboutstyles.css --- */
+
+/* --- Variables --- */
+:root {
+  --color-bg: #FDFBF7;
+  --color-text: #1A1A1A;
+  --color-accent: #C5A059;
+  --color-border: #E8E2D5;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* --- Header --- */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 100;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* This underlines the "About" link so users know which page they're on */
+.poop a {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+/* --- Dropdown Menu --- */
+.dropdown {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: -1rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  min-width: 180px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(10px);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li { border-bottom: 1px solid var(--color-border); }
+.dropdown-menu li:last-child { border-bottom: none; }
+
+.dropdown-menu a {
+  display: block;
+  padding: 1rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-text);
+  color: var(--color-accent);
+}
+
+/* --- Buttons --- */
+.book-btn, .btn-book {
+  background-color: var(--color-text);
+  color: var(--color-accent);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+/* This makes the link inside the button inherit the button's color */
+.book-btn a, .btn-book a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-book {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.book-btn:hover { background-color: var(--color-accent); color: #fff; }
+.btn-book:hover { background-color: var(--color-text); color: var(--color-accent); }
+
+/* --- Hamburger Button (hidden on desktop) --- */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* --- About Page Section --- */
+.about-page {
+  padding: 8rem 10%;
+  background-color: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-image-column {
+  flex: 0 0 45%;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.about-image-column img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image-column:hover img {
+  transform: scale(1.02);
+}
+
+.about-text-column {
+  flex: 0 0 50%;
+}
+
+.about-text-column h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.about-text-column p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+/* Tablet: screens 992px wide and below */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column; /* Stack image on top of text */
+    gap: 3rem;
+  }
+  .about-image-column, .about-text-column {
+    flex: 0 0 100%; /* Each takes full width */
+  }
+}
+
+/* Mobile: screens 768px wide and below */
+@media (max-width: 768px) {
+
+  /* --- Header becomes wrappable on mobile --- */
+  .main-header {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* --- Show the hamburger button --- */
+  .hamburger {
+    display: block;
+    order: 2;
+  }
+
+  /* --- Hide the nav by default on mobile --- */
+  .desktop-nav {
+    width: 100%;
+    order: 3;
+    display: none;
+  }
+
+  /* --- JavaScript adds this class to show the menu --- */
+  .desktop-nav.active {
+    display: block;
+  }
+
+  /* --- Stack nav links vertically --- */
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  /* --- Dropdown becomes static (not floating) on mobile --- */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    border: none;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* --- Hide the Book Now button in the header on mobile --- */
+  .book-btn {
+    display: none;
+  }
+
+  /* --- About page text adjustments --- */
+  .about-page {
+    padding: 4rem 5%;
+  }
+
+  .about-text-column h2 {
+    font-size: 2rem;
+  }
+
+  .about-text-column p {
+    font-size: 1rem;
+  }
+
+  /* --- Make the Book Your Slot button full width on mobile --- */
+  .btn-book {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* --- Footer (matching index.html) --- */
+footer {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 5rem 10% 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.footer-ig-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+.footer-ig-link:hover {
+  opacity: 0.75;
+}
+
+.copyright {
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #333;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* --- Mobile Sticky Book Button --- */
+.mobile-sticky-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-btn {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--color-accent);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    z-index: 200;
+  }
+
+  footer {
+    padding-bottom: 5rem;
+  }
+}

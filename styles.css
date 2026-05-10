@@ -1,0 +1,747 @@
+/* --- Premium Variables --- */
+:root {
+  --color-bg: #FDFBF7; /* Warm, creamy off-white */
+  --color-text: #1A1A1A; /* Deep rich charcoal */
+  --color-accent: #C5A059; /* Premium muted gold */
+  --color-border: #E8E2D5; /* Soft dividing line */
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+}
+.poop{
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+.pooper{
+  color: var(--color-accent);
+}
+/* --- Global Reset & Foundation --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.poop{
+  text-decoration: underline;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg); 
+  color: var(--color-text);
+  overflow-x: hidden; /* Prevents horizontal scroll on mobile */
+}
+
+h1, h2, h3, .logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* --- Header Layout --- */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 100;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid var(--color-border); 
+}
+
+.logo {
+  font-size: 1.6rem; 
+  letter-spacing: 1px; 
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* --- Dropdown --- */
+.dropdown {
+  position: relative; 
+  padding-bottom: 1rem; 
+  margin-bottom: -1rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  min-width: 180px; 
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(10px); 
+  z-index: 10; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li { border-bottom: 1px solid var(--color-border); }
+.dropdown-menu li:last-child { border-bottom: none; }
+
+.dropdown-menu a {
+  display: block; 
+  padding: 1rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--color-text);
+  color: var(--color-accent); 
+}
+.waste{
+  text-decoration: none;
+}
+/* --- Buttons --- */
+.book-btn, .btn-book {
+  background-color: var(--color-text);
+  color: var(--color-accent);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.btn-book {
+    padding: 1rem 2.5rem;
+    background-color: var(--color-accent); 
+    color: #fff;
+}
+
+.book-btn:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-book:hover {
+  background-color: var(--color-text);
+  color: var(--color-accent);
+}
+
+/* --- Hide Mobile Hamburger by Default --- */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.waste{
+  color: #ffffff;
+}
+/* --- Hero Section --- */
+.hero {
+  height: 80vh;
+  /* INSERT YOUR HERO BACKGROUND IMAGE URL HERE */
+  background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('kn.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  letter-spacing: 1px; 
+  margin-bottom: 1.5rem; 
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem; 
+  letter-spacing: 2px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #f0f0f0;
+}
+
+/* --- Services Section (Upgraded) --- */
+.services, .team, .gallery, .testimonials {
+  padding: 6rem 10%;
+}
+
+.services {
+  background-color: #fff; 
+}
+
+.services h2, .team h2, .gallery h2, .testimonials h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 4rem;
+  color: var(--color-text);
+}
+
+.service-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: 0.3s;
+}
+
+.service-item:hover {
+  padding-left: 10px;
+  border-color: var(--color-accent);
+}
+
+.service-info {
+    max-width: 75%;
+}
+
+.service-title {
+    display: block;
+    font-size: 1.3rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.service-item:hover .service-title {
+    color: var(--color-accent);
+}
+
+.service-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+/* --- Owner Spotlight Section --- */
+.owner-spotlight {
+    background-color: var(--color-bg);
+    padding: 6rem 10%;
+}
+
+.owner-spotlight h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    color: var(--color-text);
+}
+
+.owner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.owner-img {
+    width: 320px;
+    height: 400px;
+    background-color: var(--color-border);
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Adds a subtle premium shadow */
+}
+
+.owner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.8s ease;
+}
+
+.owner-spotlight:hover .owner-img img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.owner-bio {
+    max-width: 450px;
+}
+
+.owner-bio h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.owner-title {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.owner-story {
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.05rem;
+}
+/* --- Testimonials Section --- */
+.testimonials {
+    background-color: var(--color-bg);
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: #fff;
+    padding: 3rem 2rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+}
+
+.stars {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.review-card span {
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-text);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 5rem 10% 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+.footer-section p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.map-container iframe {
+    border-radius: 4px;
+}
+
+.copyright {
+    text-align: center;
+    color: #666;
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+}
+/* --- styles.css --- */
+
+/* ... (previous styles) ... */
+
+/* --- Upgraded Gallery Section (Lookbook) --- */
+.gallery {
+  padding: 6rem 10%;
+  background-color: #fff;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 4rem;
+  color: var(--color-text);
+}
+
+.gallery-grid {
+  display: flex; /* Changed from grid to flex */
+  justify-content: center; /* Center the items */
+  gap: 1.5rem; /* Space between images */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  /* This sets each item to be roughly 25% width on desktop, minus the gap */
+  flex: 0 0 calc(25% - 1.5rem);
+  aspect-ratio: 1 / 1; /* Keeps the images square */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Optional: add a subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03); /* Slight zoom on hover */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the square correctly */
+}
+
+
+@media (max-width: 480px) {
+  .gallery-item {
+    /* On very small screens, stack them */
+    flex: 0 0 100%;
+  }
+}
+
+/* ... (rest of previous styles) ... */
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap; 
+  }
+
+  .hamburger {
+    display: block;
+    order: 2; 
+  }
+
+  .desktop-nav {
+    width: 100%;
+    order: 3; 
+    display: none; /* Hidden by default */
+  }
+
+  /* Added by JS toggle */
+  .desktop-nav.active {
+      display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none; 
+    border: none;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* --- Meet the Master: stack vertically on mobile --- */
+  .owner-container {
+    flex-direction: column; /* image on top, text below */
+    gap: 2rem;
+  }
+
+  .owner-img {
+    width: 100%;       /* stretch to full width instead of fixed 320px */
+    height: 320px;     /* a comfortable height for a portrait photo */
+  }
+
+  .owner-bio {
+    max-width: 100%;   /* text takes full width too */
+    text-align: center;
+  }
+
+  .owner-bio h3 {
+    font-size: 1.8rem;
+  }
+
+  .owner-spotlight {
+    padding: 4rem 5%;
+  }
+
+  .hero-content h1 {
+      font-size: 3rem;
+  }
+  
+  .book-btn {
+      display: none; 
+  } 
+
+  .service-item {
+      flex-direction: column;
+  }
+
+  .service-info {
+      max-width: 100%;
+      margin-bottom: 1rem;
+  }
+  .gallery-item {
+    /* On mobile, show 2 images per row */
+    flex: 0 0 calc(50% - 1rem);
+    gap: 1rem;
+  }
+}
+/* --- Hero Price Hint --- */
+.hero-price {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 1.5px;
+  margin-top: -1.5rem;     /* pulls it closer to the paragraph above */
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.hero-price span {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* --- FAQ Section --- */
+.faq {
+  padding: 6rem 10%;
+  background-color: var(--color-bg);
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 4rem;
+  color: var(--color-text);
+}
+
+.faq-list {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* The question is a button so it's keyboard-accessible */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.5rem 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-accent);
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* The answer is hidden by default */
+.faq-answer {
+  max-height: 0;              /* collapsed: takes up no space */
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* JavaScript adds the 'open' class to expand it */
+.faq-answer.open {
+  max-height: 200px;          /* expanded: enough room for the text */
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* --- Instagram Section --- */
+.instagram-section {
+  padding: 6rem 10%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.instagram-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.ig-subtitle {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ig-handle {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  padding: 0.6rem 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+  transition: 0.3s ease;
+}
+
+.ig-handle:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.ig-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ig-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.ig-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ig-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Mobile Sticky Book Button --- */
+/* Hidden on desktop, only shown on mobile */
+.mobile-sticky-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-btn {
+    display: block;
+    position: fixed;       /* stays on screen as you scroll */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--color-accent);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    z-index: 200;
+  }
+
+  /* Add padding to the footer so the sticky button doesn't cover content */
+  footer {
+    padding-bottom: 5rem;
+  }
+
+  /* FAQ adjustments */
+  .faq {
+    padding: 4rem 5%;
+  }
+
+  .instagram-section {
+    padding: 4rem 5%;
+  }
+
+  .ig-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
